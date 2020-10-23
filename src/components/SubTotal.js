@@ -4,7 +4,7 @@ import { useStateValue } from "../StateProvider";
 import "./SubTotal.css";
 function SubTotal() {
   const [{ basket }, dispatch] = useStateValue();
-  const [totalPrice, settotalPrice] = useState(0);
+
   return (
     <div className="subtotal">
       <p>
@@ -21,4 +21,3 @@ function SubTotal() {
 }
 
 export default SubTotal;
-//add comment in subtotal for testing
