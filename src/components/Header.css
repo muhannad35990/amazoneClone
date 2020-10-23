@@ -1,0 +1,61 @@
+.navBar_custem {
+  display: flex;
+  align-items: center;
+  background-color: #131921;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navBar_custem img {
+  width: 100px;
+  object-fit: contain;
+  margin-left: 20px;
+}
+.search__box {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 50px 10px 50px;
+}
+.search__box > input {
+  flex: 1;
+  padding: 7.5px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+.search__box > Button {
+  background-color: #f3a847;
+  border: none;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  height: 39px;
+}
+.search__box > Button:hover {
+  background-color: #8a5a1c;
+}
+.nav_rightSide {
+  display: flex;
+  justify-content: space-around;
+}
+.nav__rightSide_item {
+  color: white;
+  margin-right: 20px;
+}
+.font__bold {
+  font-weight: 700;
+  font-size: 14px;
+}
+.cart {
+  display: flex;
+  align-items: center;
+}
+.cart .MuiSvgIcon-root {
+  color: white;
+}
+.orange__font__color {
+  color: #f3a847;
+}
+.account_list_arrown {
+  display: flex;
+}
