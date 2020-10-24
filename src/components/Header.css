@@ -59,3 +59,8 @@
 .account_list_arrown {
   display: flex;
 }
+.link,
+.link:hover {
+  text-decoration: none;
+  color: inherit;
+}

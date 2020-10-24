@@ -8,7 +8,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import "./Header.css";
 import { useStateValue } from "../StateProvider";
 function Header() {
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
   return (
     <div className="navBar_custem">
       <Link to="/">
@@ -23,7 +23,10 @@ function Header() {
       </div>
       <div className="nav_rightSide">
         <div className="nav__rightSide_item">
-          <small>Hello, Sign in</small>
+          <Link to="/login" className="link">
+            <small>Hello, {user?.Email} </small>
+            <span>{user ? "signout" : "signin"}</span>
+          </Link>
           <div className="account_list_arrown">
             <span className="font__bold">Account & Lists</span>
             <div>
