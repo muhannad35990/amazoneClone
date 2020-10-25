@@ -44,7 +44,7 @@ function Home() {
           />
           <Product
             title="canvas a-svg   a-history a-webworker a-autofocus
-             a-input-placeholder rder-radius"
+              "
             image={image4}
             rating={5}
             price={10}

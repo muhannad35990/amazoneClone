@@ -7,8 +7,15 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import "./Header.css";
 import { useStateValue } from "../StateProvider";
+import { auth } from "../firebase";
 function Header() {
   const [{ basket, user }] = useStateValue();
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    } else {
+    }
+  };
   return (
     <div className="navBar_custem">
       <Link to="/">
@@ -22,17 +29,17 @@ function Header() {
         </Button>
       </div>
       <div className="nav_rightSide">
-        <div className="nav__rightSide_item">
-          <Link to="/login" className="link">
-            <small>Hello, {user?.Email} </small>
-            <span>{user ? "signout" : "signin"}</span>
+        <div onClick={handleAuthentication} className="nav__rightSide_item">
+          <Link to={!user && "/login"} className="link">
+            <small>Hello, {user ? user?.email : "Guest"} </small>
+            <p>{user ? "Sign out" : "Sign in"}</p>
           </Link>
-          <div className="account_list_arrown">
+          {/* <div className="account_list_arrown">
             <span className="font__bold">Account & Lists</span>
             <div>
               <ArrowDropDownIcon />{" "}
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="nav__rightSide_item">
