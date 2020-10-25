@@ -33,6 +33,7 @@ function Payment() {
   const handleSubmit = async (event) => {
     //handle strip
     event.preventDefault();
+    console.log("form submitted");
     setProcessing(true); //stop clicking buy button
 
     const payload = await stripe
@@ -99,10 +100,13 @@ function Payment() {
               <CardElement onChange={handleChange} />
               <div className="payment__priceContainer">
                 <h3>Order Total: {getBasketTotal(basket)} $ </h3>
-                <button disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
-                </button>
               </div>
+              <button
+                type="submit"
+                disabled={processing || disabled || succeeded}
+              >
+                <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+              </button>
               {/* Errors */}
               {error && <div>{error}</div>}
             </from>
